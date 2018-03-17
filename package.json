@@ -1,0 +1,22 @@
+{
+  "name": "flashvault-desktop-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf build ",
+    "prebuild": "mkdir -p build/linux",
+    "build": "npm run build:all",
+    "build:all": "npm-run-all -l -p build:linux build:osx build:windows",
+    "build:linux": "nativefier -p linux --name 'Flash Vault Wallets' 'https://flashvault.alex2006hw.com' build/linux ",
+    "build:osx": "nativefier -p osx --name 'Flash Vault Wallets' 'https://flashvault.alex2006hw.com' build/osx ",
+    "build:windows": "nativefier -p windows --name 'Flash Vault Wallets' 'https://flashvault.alex2006hw.com' build/windows "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nativefier": "7.5.4",
+    "npm-run-all": "4.1.2"
+  }
+}
